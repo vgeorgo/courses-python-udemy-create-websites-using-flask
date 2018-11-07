@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form class="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.breed.label }}{{ form.breed() }}
+    <br>
+    {{ form.neutered.label }}{{ form.neutered() }}
+    <br>
+    {{ form.mood.label }}{{ form.mood() }}
+    <br>
+    {{ form.food_choice.label }}{{ form.food_choice() }}
+    <br>
+    {{ form.feedback.label }}{{ form.feedback() }}
+    <br>
+    {{ form.submit() }}
+  </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endfor %}
+
+  <p>Information given</p>
+  <ul>
+    <li>Breed: {{ session['breed'] }}</li>
+    <li>Neutered: {{ session['neutered'] }}</li>
+    <li>Mood: {{ session['mood'] }}</li>
+    <li>Food choice: {{ session['food'] }}</li>
+    <li>Feedback: {{ session['feedback'] }}</li>
+  </ul>
+{% endblock %}

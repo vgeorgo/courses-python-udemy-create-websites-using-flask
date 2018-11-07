@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome to the site!</h1>
+
+    <a href="{{ url_for('home') }}">Templates Inheritance</a><br>
+    <a href="{{ url_for('signup') }}">Sign up</a><br>
+    <a href="{{ url_for('static', filename = 'cat.jpg') }}">Image</a>
+
+    <h2>Cats are nice</h2>
+    <img src="../static/cat.jpg" alt="">
+
+    <h2>Jinja vars</h2>
+    {{ my_variable }}<br>
+    {{ letters }}<br>
+    {{ dictionary }}<br>
+
+    <h2>Controls</h2>
+    <ul>
+      {% for letter in letters %}
+        <li>{{letter}}</li>
+      {% endfor %}
+    </ul>
+
+    {% if 'z' in letters %}
+      <p>Found Z in string</p>
+    {% else %}
+      <p>Not found Z in string</p>
+    {% endif %}
+  </body>
+</html>
