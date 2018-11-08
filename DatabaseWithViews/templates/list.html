@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1>Here is a list of all available puppies: </h1>
+    <ul>
+      {% for puppy in puppies %}
+          <li>{{ puppy }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
