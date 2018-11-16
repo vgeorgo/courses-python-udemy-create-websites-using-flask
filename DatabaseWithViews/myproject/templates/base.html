@@ -12,10 +12,10 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="{{ url_for('index') }}">Forms - Puppies</a>
-      <a class="nav-item nav-link" href="{{ url_for('add') }}">Add</a>
-      <a class="nav-item nav-link" href="{{ url_for('list') }}">List</a>
-      <a class="nav-item nav-link" href="{{ url_for('delete') }}">Delete</a>
-      <a class="nav-item nav-link" href="{{ url_for('add_owner') }}">Add Owner</a>
+      <a class="nav-item nav-link" href="{{ url_for('puppies.add') }}">Add</a>
+      <a class="nav-item nav-link" href="{{ url_for('puppies.list') }}">List</a>
+      <a class="nav-item nav-link" href="{{ url_for('puppies.delete') }}">Delete</a>
+      <a class="nav-item nav-link" href="{{ url_for('owners.add') }}">Add Owner</a>
     </nav>
 
     {% block content %}

@@ -8,8 +8,3 @@ class AddForm(FlaskForm):
 class DelForm(FlaskForm):
     id = StringField('ID of puppy to remove: ')
     submit = SubmitField('Remove Puppy')
-
-class AddOwnerForm(FlaskForm):
-    name_owner = StringField('Name of owner: ')
-    id_pup = StringField('ID of puppy: ')
-    submit = SubmitField('Add Owner')
