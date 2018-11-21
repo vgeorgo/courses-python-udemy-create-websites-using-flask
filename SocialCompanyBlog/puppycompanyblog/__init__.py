@@ -21,6 +21,9 @@ app.register_blueprint(core)
 
 from puppycompanyblog.error_pages.handlers import error_pages
 app.register_blueprint(error_pages)
+
+from puppycompanyblog.users.views import users
+app.register_blueprint(users)
 ########################
 
 ########## LOGIN SECTION
