@@ -59,7 +59,7 @@ def account():
         db.session.commit()
         flash('Account updated!')
 
-    elif request.method == 'GET'
+    elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
 
