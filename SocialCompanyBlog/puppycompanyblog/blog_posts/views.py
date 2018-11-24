@@ -2,13 +2,13 @@ from flask import render_template,url_for,flash,redirect,request,Blueprint
 from flask_login import current_user,login_required
 from puppycompanyblog import db
 from puppycompanyblog.models import BlogPost
-from puppycompanyblog.user_posts.forms import BlogPostForm
+from puppycompanyblog.blog_posts.forms import BlogPostForm
 
 blog_posts = Blueprint('blog_posts',__name__)
 
 @blog_posts.route('/create',methods=['GET','POST'])
 @login_required
-def create():
+def create_post():
     form = BlogPostForm()
     if form.validate_on_submit():
         blog_post = BlogPost(title=form.title.data,
@@ -23,7 +23,7 @@ def create():
 
 @blog_posts.route('/<int:blog_post_id>/update',methods=['GET','POST'])
 @login_required
-def update(blog_post_id):
+def update_post(blog_post_id):
     blog_post = BlogPost.query.get_or_404(blog_post_id)
     if blog_post.author != current_user:
         abort(403)
@@ -44,7 +44,7 @@ def update(blog_post_id):
 
 @blog_posts.route('/<int:blog_post_id>/delete',methods=['GET','POST'])
 @login_required
-def delete(blog_post_id):
+def delete_post(blog_post_id):
     blog_post = BlogPost.query.get_or_404(blog_post_id)
     if blog_post.author != current_user:
         abort(403)
