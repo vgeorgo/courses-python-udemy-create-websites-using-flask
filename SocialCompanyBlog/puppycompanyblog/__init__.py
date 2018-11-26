@@ -32,7 +32,7 @@ from puppycompanyblog.error_pages.handlers import error_pages
 app.register_blueprint(error_pages)
 
 from puppycompanyblog.users.views import users
-app.register_blueprint(users)
+app.register_blueprint(users, url_prefix='/user')
 
 from puppycompanyblog.blog_posts.views import blog_posts
-app.register_blueprint(blog_posts)
+app.register_blueprint(blog_posts, url_prefix='/blog')
