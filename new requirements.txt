@@ -1,0 +1,4 @@
+create 'Procfile' on root to deploy on Heroku with:
+web: gunicorn app:app
+
+pip freeze > requirements.txt
